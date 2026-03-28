@@ -12,6 +12,7 @@ import {
     console.error("Error fetching Blinkit data:", err);
   }
 }
+fetchBlinkitPrice(searchInputValue); // your search input
   AlertTriangle,
   ArrowRight,
   BarChart2,
