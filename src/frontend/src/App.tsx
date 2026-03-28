@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  async function fetchBlinkitPrice(product: string) {
+  try {
+    const response = await fetch(`http://localhost:5000/api/blinkit/${product}`);
+    const data = await response.json();
+    setBlinkitData(data); // update state
+  } catch (err) {
+    console.error("Error fetching Blinkit data:", err);
+  }
+}
   AlertTriangle,
   ArrowRight,
   BarChart2,
