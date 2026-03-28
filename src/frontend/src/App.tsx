@@ -18,6 +18,27 @@ fetch("http://localhost:5000/prices")
   .then(res => res.json())
   .then(data => console.log(data));
 fetchBlinkitPrice(searchInputValue); // your search input
+{blinkitData && (
+  <div>
+    <h2>Blinkit Prices (Last updated: {new Date(blinkitData.lastUpdated).toLocaleTimeString()})</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {blinkitData.data.map((item: any, idx: number) => (
+          <tr key={idx}>
+            <td>{item.name}</td>
+            <td>{item.price}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}
   AlertTriangle,
   ArrowRight,
   BarChart2,
