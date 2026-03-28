@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  // Add near other useState declarations
+const [blinkitData, setBlinkitData] = useState<any>(null);
   async function fetchBlinkitPrice(product: string) {
   try {
     const response = await fetch(`http://localhost:5000/api/blinkit/${product}`);
