@@ -14,6 +14,9 @@ const [blinkitData, setBlinkitData] = useState<any>(null);
     console.error("Error fetching Blinkit data:", err);
   }
 }
+fetch("http://localhost:5000/prices")
+  .then(res => res.json())
+  .then(data => console.log(data));
 fetchBlinkitPrice(searchInputValue); // your search input
   AlertTriangle,
   ArrowRight,
